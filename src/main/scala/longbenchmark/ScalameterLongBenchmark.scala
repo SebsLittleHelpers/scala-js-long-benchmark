@@ -295,11 +295,6 @@ object ScalameterLongBenchmark extends js.JSApp {
         val id = ctx.scopeList.mkString("-")
         println(s"id = $id")
         dom.document.getElementById(id).innerHTML = s"$measure $units"
-        js.Dynamic.global.$.apply(dom.window).trigger("resize")
-        dom.document.getElementById("results").asInstanceOf[js.Dynamic].style.display = "none";
-        println(dom.document.getElementById("results").asInstanceOf[js.Dynamic].offsetWidth)
-        dom.document.getElementById("results").asInstanceOf[js.Dynamic].style.display = "block";
-        println(dom.document.getElementById("results").asInstanceOf[js.Dynamic].offsetWidth)
       }
 
       def report(results: Tree[CurveData[Double]], persistor: Persistor): Boolean = {
