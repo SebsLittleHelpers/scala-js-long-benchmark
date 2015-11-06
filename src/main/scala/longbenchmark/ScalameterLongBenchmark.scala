@@ -14,7 +14,7 @@ import org.scalameter.CurveData
  */
 object ScalameterLongBenchmark extends js.JSApp {
 
-  object LongBench extends Bench.OfflineReport {
+  object LongBench extends LocalTime {
 
     //val gwtLong = Gen.single("gwt")(gwtlike.Build.fromLong _)
     //val optgwtLong = Gen.single("optgwt")(optgwtlike.Build.fromLong _)
@@ -302,11 +302,7 @@ object ScalameterLongBenchmark extends js.JSApp {
 
         true
       }
-
     }
-
-    override def executor = LocalExecutor(warmer, aggregator, measurer)
-    override def persistor = Persistor.None
   }
 
   def main: Unit = {
